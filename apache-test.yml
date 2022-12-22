@@ -1,0 +1,9 @@
+- hosts: all
+  tasks:
+  - debug:
+      msg: "{{ package }}"
+
+  - name: Start Apache
+    systemd:
+      state: started
+      name: "{{ package }}"

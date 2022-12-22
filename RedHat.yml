@@ -8,3 +8,23 @@
     state: started
     name: httpd
     enabled: yes
+
+- name: Install Unzip unpacker
+  yum:
+    name: unzip
+    state: latest
+
+- name: Fetch template archive
+  unarchive:
+    src: https://www.free-css.com/assets/files/free-css-templates/download/page281/john-doe.zip
+    dest: /tmp/
+    remote_src: yes
+
+- name: Copy template files to the server /var/www/html
+  copy:
+    src: /tmp/johndoe/public_html/
+    dest: /var/www/html/
+    remote_src: yes
+
+#eof
+    
