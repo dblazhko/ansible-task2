@@ -1,0 +1,10 @@
+- name: Install RedHat Apache
+  yum:
+    name: httpd
+    state: latest
+
+- name: Start RedHat Apache
+  systemd:
+    state: started
+    name: httpd
+    enabled: yes

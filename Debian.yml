@@ -1,0 +1,10 @@
+- name: Install Debian Apache
+  apt:
+    name: apache2
+    state: present
+
+- name: Start Debian Apache
+  systemd:
+    state: started
+    name: apache2
+    enabled: yes
